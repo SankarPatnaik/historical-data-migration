@@ -1,0 +1,27 @@
+jobs:
+  - name: oracle_customers
+    source:
+      type: oracle
+      host: oracle.host
+      port: 1521
+      database: ORCL
+      user: user
+      password: pass
+      query: "SELECT * FROM customers"
+    target:
+      s3_bucket: my-historical-data
+      s3_prefix: oracle/customers/
+      format: parquet
+  - name: mongo_orders
+    source:
+      type: mongodb
+      host: mongo.host
+      port: 27017
+      database: sales
+      user: user
+      password: pass
+      collection: orders
+    target:
+      s3_bucket: my-historical-data
+      s3_prefix: mongo/orders/
+      format: parquet

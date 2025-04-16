@@ -1,0 +1,8 @@
+pandas
+boto3
+pyarrow
+python-dotenv
+pyodbc
+cx_Oracle
+pymongo
+PyYAML
